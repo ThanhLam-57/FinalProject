@@ -1,123 +1,74 @@
 package Service;
 
-import Database.Connect;
+import DAO.DepartmentDAO;
 import Modal.Department;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class DepartmentService {
-    public void insertDepartment(Department department){
-        Connection conn= null;
-        PreparedStatement prst = null;
-        try {
-            conn = Connect.getConnection();
-            String sql = "INSERT INTO department(department_code, department_name) VALUES (?, ?)";
-            prst = conn.prepareStatement(sql);
-            prst.setString(1, department.getDepartment_code());
-            prst.setString(2, department.getDepartment_name());
-            prst.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (prst != null) {
-                    prst.close();
-                }
-                if (conn != null) {
-                    conn.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
+    public static  Scanner scanner = new Scanner(System.in);
+    public DepartmentDAO departmentDAO;
+    //TODO1: Create a method to get all departments
+    public void getAllDepartments() {
+        List<Department> departments = departmentDAO.getAllDepartment();
+        if (departments.size()>0) {
+            for (int i = 0; i < departments.size(); i++) {
+                System.out.println(departments.get(i).toString());
             }
+        } else {
+            System.out.println("No department found");
         }
     }
-    public List<Department> getAllDepartment(){
-        List<Department> departments = new ArrayList<>();
-        Connection conn= null;
-        PreparedStatement prst = null;
-        try {
-            conn = Connect.getInstance().getConnection();
-            String sql = "SELECT * FROM department";
-            prst = conn.prepareStatement(sql);
-            java.sql.ResultSet rs = prst.executeQuery();
-            while (rs.next()){
-                Department department = new Department();
-                department.setDepartment_id(rs.getInt("department_id"));
-                department.setDepartment_code(rs.getString("department_code"));
-                department.setDepartment_name(rs.getString("department_name"));
-                departments.add(department);
-            }
-        } catch (SQLException e) {
-            throw  new RuntimeException(e);
-        } finally {
-            try {
-                if (prst != null) {
-                    prst.close();
-                }
-                if (conn != null) {
-                    conn.close();
-                }
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-        }
-        return departments;
-    }
-    public Department updateDepartment(Department department){
-        Connection conn= null;
-        PreparedStatement prst = null;
-        try {
-            conn = Connect.getConnection();
-            String sql = "UPDATE department SET department_code = ?, department_name = ? WHERE department_id = ?";
-            prst = conn.prepareStatement(sql);
-            prst.setString(1, department.getDepartment_code());
-            prst.setString(2, department.getDepartment_name());
-            prst.setInt(3, department.getDepartment_id());
-            prst.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (prst != null) {
-                    prst.close();
-                }
-                if (conn != null) {
-                    conn.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-        return department;
-    }
-    public void deleteDepartment(int department_id){
-        Connection conn= null;
-        PreparedStatement prst = null;
-        try {
-            conn = Connect.getConnection();
-            String sql = "DELETE FROM department WHERE department_id = ?";
-            prst = conn.prepareStatement(sql);
-            prst.setInt(1, department_id);
-            prst.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (prst != null) {
-                    prst.close();
-                }
-                if (conn != null) {
-                    conn.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+    //TODO2: Create a method to get a department by id
+    public void showDepartmentById() {
+        System.out.println("Enter department id: ");
+        Integer departmentId = Integer.parseInt(scanner.nextLine());
+        Department department = departmentDAO.getDepartmentById(departmentId);
+        if(department == null){
+            System.out.println("Department not found");
+        } else {
+            System.out.println(department.toString());
         }
     }
-
+    //TODO3: Create a method to update a department
+    public void updateDepartment() {
+        System.out.println("Enter department id: ");
+        Integer departmentId = Integer.parseInt(scanner.nextLine());
+        Department department = departmentDAO.getDepartmentById(departmentId);
+        if(department == null){
+            System.out.println("Department not found");
+        } else {
+            System.out.println("Enter department code: ");
+            String departmentCode = scanner.nextLine();
+            System.out.println("Enter department name: ");
+            String departmentName = scanner.nextLine();
+            department.setDepartment_code(departmentCode);
+            department.setDepartment_name(departmentName);
+            departmentDAO.updateDepartment(department);
+            System.out.println("Update department successfully");
+        }
+    }
+    //TODO4: Create a method to delete a department
+    public void deleteDepartment() {
+        System.out.println("Enter department id: ");
+        Integer departmentId = Integer.parseInt(scanner.nextLine());
+        Department department = departmentDAO.getDepartmentById(departmentId);
+        if(department == null){
+            System.out.println("Department not found");
+        } else {
+            departmentDAO.deleteDepartment(departmentId);
+            System.out.println("Delete department successfully");
+        }
+    }
+    //TODO5: Create a method to create a department
+    public void createDepartment() {
+        System.out.println("Enter department code: ");
+        String departmentCode = scanner.nextLine();
+        System.out.println("Enter department name: ");
+        String departmentName = scanner.nextLine();
+        Department department = new Department(departmentCode, departmentName);
+        departmentDAO.insertDepartment(department);
+        System.out.println("Create department successfully");
+    }
 }

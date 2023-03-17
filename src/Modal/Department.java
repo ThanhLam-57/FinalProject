@@ -10,6 +10,12 @@ public class Department {
         this.department_code = department_code;
         this.department_name = department_name;
     }
+
+    public Department(String department_code, String department_name) {
+        this.department_code = department_code;
+        this.department_name = department_name;
+    }
+
     public Department() {
     }
     public int getDepartment_id() {

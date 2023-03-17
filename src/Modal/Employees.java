@@ -17,6 +17,8 @@ public class Employees {
     private String department_id;
     private String department_code;
     private String department_name;
+    private int namager_id;
+    private String manager_name;
 
     public Employees() {
     }
@@ -148,6 +150,22 @@ public class Employees {
 
     public void setPosition_name(String position_name) {
         this.position_name = position_name;
+    }
+
+    public int getNamager_id() {
+        return namager_id;
+    }
+
+    public void setNamager_id(int namager_id) {
+        this.namager_id = namager_id;
+    }
+
+    public String getManager_name() {
+        return manager_name;
+    }
+
+    public void setManager_name(String manager_name) {
+        this.manager_name = manager_name;
     }
 
     @Override
