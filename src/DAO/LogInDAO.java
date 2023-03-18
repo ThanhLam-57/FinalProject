@@ -8,13 +8,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class LogInDAO {
-    public boolean checkLoginDAO(String username, String password) {
+    public static boolean checkLoginDAO(String username, String password) {
         Connection conn = null;
         Statement stmt = null;
         try {
             conn = Connect.getInstance().getConnection();
             stmt = conn.createStatement();
-            String sql = "SELECT * FROM employees e WHERE e.employee_code = " + username + " AND e.employee_password = " + password;
+            String sql = "SELECT * FROM log_in li WHERE li.user_name ='"+username+"' AND li.password = '"+password+"';";
             ResultSet rs = stmt.executeQuery(sql);
             if (rs.next()) {
                 return true;

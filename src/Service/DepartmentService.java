@@ -49,7 +49,6 @@ public class DepartmentService {
             System.out.println("Update department successfully");
         }
     }
-
     //TODO4: Create a method to delete a department
     public void deleteDepartment() {
         System.out.println("Enter department id: ");
