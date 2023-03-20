@@ -6,7 +6,6 @@ import Modal.Employees;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.text.spi.DateFormatProvider;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
@@ -21,7 +20,6 @@ public class EmployeeService {
             System.out.println(employees.get(i).toString());
         }
     }
-
     //TODO: Create a method to get an employee by id
     public void getEmployeeByID(){
         System.out.println("Enter employee id: ");
@@ -33,7 +31,6 @@ public class EmployeeService {
             System.out.println(employees.toString());
         }
     }
-
     //TODO: Create a method to update an employee
     public void updateEmployee(){
         System.out.println("Enter employee id: ");
