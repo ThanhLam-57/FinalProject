@@ -1,6 +1,6 @@
-package Service;
+package Service.LoginService;
 
-import DAO.LogInDAO;
+import DAO.LogInDAO.LogInDAO;
 
 import java.util.Scanner;
 

@@ -1,6 +1,6 @@
-package Service;
+package Service.EmployeeService;
 
-import DAO.EmployeeDAO;
+import DAO.EmployeeDAO.EmployeeDAO;
 import Modal.Employees;
 
 import java.util.List;

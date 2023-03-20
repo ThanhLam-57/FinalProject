@@ -1,4 +1,4 @@
-package DAO;
+package DAO.EmployeeDAO;
 
 import Database.Connect;
 import Modal.Employees;

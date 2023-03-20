@@ -1,4 +1,4 @@
-package DAO;
+package DAO.DepartmentDAO;
 
 import Database.Connect;
 import Modal.Department;

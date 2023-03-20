@@ -1,4 +1,4 @@
-package DAO;
+package DAO.BaseDAO;
 
 import Database.Connect;
 import jdk.jfr.Name;
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class BaseDAO<T> implements IBaseDAO<T>{
+public class BaseDAO<T> implements IBaseDAO<T> {
     private Class<T> tClass;
     public BaseDAO(Class<T> tClass) {
         this.tClass = tClass;

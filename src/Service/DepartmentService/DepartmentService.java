@@ -1,6 +1,6 @@
-package Service;
+package Service.DepartmentService;
 
-import DAO.DepartmentDAO;
+import DAO.DepartmentDAO.DepartmentDAO;
 import Modal.Department;
 
 import java.util.List;

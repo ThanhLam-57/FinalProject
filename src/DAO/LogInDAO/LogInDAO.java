@@ -1,4 +1,4 @@
-package DAO;
+package DAO.LogInDAO;
 
 import Database.Connect;
 
@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class LogInDAO {
+public class LogInDAO implements ILogInDAO {
     public static boolean checkLoginDAO(String username, String password) {
         Connection conn = null;
         Statement stmt = null;

@@ -1,6 +1,6 @@
-import Service.DepartmentService;
-import Service.EmployeeService;
-import Service.LogInService;
+import Service.DepartmentService.DepartmentService;
+import Service.EmployeeService.EmployeeService;
+import Service.LoginService.LogInService;
 
 import java.util.Scanner;
 
