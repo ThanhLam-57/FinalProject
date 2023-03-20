@@ -3,6 +3,11 @@ package Service.EmployeeService;
 import DAO.EmployeeDAO.EmployeeDAO;
 import Modal.Employees;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.text.spi.DateFormatProvider;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -71,21 +76,32 @@ public class EmployeeService {
         }
     }
     //TODO: Create a method create an employee
-    public void createEmployee(){
+    public void createEmployee() throws ParseException {
+        System.out.println("Enter employee code: ");
+        String employeeCode = scanner.nextLine();
         System.out.println("Enter employee name: ");
         String employeeName = scanner.nextLine();
-        System.out.println("Enter employee email: ");
-        String employeeEmail = scanner.nextLine();
-        System.out.println("Enter employee phone: ");
-        String employeePhone = scanner.nextLine();
+        System.out.println("Enter employee date of bỉth: ");
+        String employeeDateOfBirth = scanner.nextLine();
+        System.out.println("Enter employee gender: ");
+        String employeeGender = scanner.nextLine();
         System.out.println("Enter employee address: ");
         String employeeAddress = scanner.nextLine();
+        System.out.println("Enter employee phone: ");
+        String employeePhone = scanner.nextLine();
+        System.out.println("Enter employee email: ");
+        String employeeEmail = scanner.nextLine();
         System.out.println("Enter employee salary: ");
         Integer employeeSalary = Integer.parseInt(scanner.nextLine());
         System.out.println("Enter employee department id: ");
         Integer employeeDepartmentId = Integer.parseInt(scanner.nextLine());
-//        Employees employees = new Employees(employeeName,employeeEmail,employeePhone,employeeAddress,employeeSalary,employeeDepartmentId);
-//        employeeDAO.insertEmployee(employees);
+        System.out.println("Enter employee manager ID: ");
+        Integer employeeManagerId = Integer.parseInt(scanner.nextLine());
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = df.parse(employeeDateOfBirth);
+
+        Employees employees = new Employees(employeeCode,employeeName,date,employeeGender,employeeAddress,employeePhone,employeeEmail,employeeSalary,employeeDepartmentId,employeeManagerId);
+        employeeDAO.insertEmployee(employees);
         System.out.println("Create employee successfully");
     }
 }

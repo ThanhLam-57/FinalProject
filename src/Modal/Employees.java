@@ -13,13 +13,13 @@ public class Employees {
     private String phone;
     private String email;
     private int salary;
-    private String department_id;
+    private int department_id;
     private int namager_id;
 
     public Employees() {
     }
 
-    public Employees(int employee_id, String employee_code, String employee_name, Date date_of_birth, String gender, String address, String phone, String email, int salary, String department_id, int namager_id) {
+    public Employees(int employee_id, String employee_code, String employee_name, Date date_of_birth, String gender, String address, String phone, String email, int salary, int department_id, int namager_id) {
         this.employee_id = employee_id;
         this.employee_code = employee_code;
         this.employee_name = employee_name;
@@ -33,7 +33,7 @@ public class Employees {
         this.namager_id = namager_id;
     }
 
-    public Employees(String employee_code, String employee_name, Date date_of_birth, String gender, String address, String phone, String email, int salary, String department_id, int namager_id) {
+    public Employees(String employee_code, String employee_name, Date date_of_birth, String gender, String address, String phone, String email, int salary, int department_id, int namager_id) {
         this.employee_code = employee_code;
         this.employee_name = employee_name;
         this.date_of_birth = date_of_birth;
@@ -118,11 +118,11 @@ public class Employees {
         this.salary = salary;
     }
 
-    public String getDepartment_id() {
+    public int getDepartment_id() {
         return department_id;
     }
 
-    public void setDepartment_id(String department_id) {
+    public void setDepartment_id(int department_id) {
         this.department_id = department_id;
     }
 

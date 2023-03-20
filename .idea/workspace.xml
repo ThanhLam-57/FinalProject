@@ -5,20 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eeb1e1d1-c5f1-486b-b3e7-27370d2af987" name="Changes" comment="oke">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DAO/DepartmentDAO/IDepartmentDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DAO/EmployeeDAO/IEmployeeDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DAO/LogInDAO/ILogInDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/BaseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/BaseDAO/BaseDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/DepartmentDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/DepartmentDAO/DepartmentDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/EmployeeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/EmployeeDAO/EmployeeDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/IBaseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/BaseDAO/IBaseDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/LogInDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/LogInDAO/LogInDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/DepartmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/DepartmentService/DepartmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/EmployeeService/EmployeeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/LogInService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/LoginService/LogInService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/EmployeeDAO/EmployeeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/EmployeeDAO/EmployeeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modal/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modal/Department.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Modal/Employees.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Modal/Employees.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/EmployeeService/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/EmployeeService/EmployeeService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679283695022</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="oke">
+      <created>1679284241487</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1679284241487</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

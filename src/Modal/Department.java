@@ -1,8 +1,16 @@
 package Modal;
 
+import jdk.jfr.Label;
+import jdk.jfr.Name;
+
 public class Department {
+    @Name("department_id")
     private int department_id;
+    @Name("department_code")
+    @Label("Mã phòng ban")
     private String department_code;
+    @Name("department_name")
+    @Label("Tên phòng ban")
     private String department_name;
 
     public Department(int department_id, String department_code, String department_name) {

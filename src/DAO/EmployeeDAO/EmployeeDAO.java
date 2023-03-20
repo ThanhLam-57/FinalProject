@@ -26,7 +26,7 @@ public class EmployeeDAO {
                 employee.setPhone(rs.getString("employee_phone"));
                 employee.setEmail(rs.getString("employee_email"));
                 employee.setSalary(rs.getInt("employee_salary"));
-                employee.setDepartment_id(rs.getString("department_id"));
+                employee.setDepartment_id(rs.getInt("department_id"));
                 employee.setNamager_id(rs.getInt("department_id"));
                 employees.add(employee);
             }
@@ -54,7 +54,7 @@ public class EmployeeDAO {
                 employee.setPhone(rs.getString("employee_phone"));
                 employee.setEmail(rs.getString("employee_email"));
                 employee.setSalary(rs.getInt("employee_salary"));
-                employee.setDepartment_id(rs.getString("department_id"));
+                employee.setDepartment_id(rs.getInt("department_id"));
                 employee.setNamager_id(rs.getInt("department_id"));
             }
             return employee;
@@ -95,7 +95,7 @@ public class EmployeeDAO {
             prst.setString(6,employee.getPhone());
             prst.setString(7,employee.getEmail());
             prst.setInt(9,employee.getSalary());
-            prst.setString(11,employee.getDepartment_id());
+            prst.setInt(11,employee.getDepartment_id());
             prst.setInt(14,employee.getNamager_id());
             prst.executeUpdate();
             return null;
