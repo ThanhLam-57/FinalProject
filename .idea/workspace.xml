@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eeb1e1d1-c5f1-486b-b3e7-27370d2af987" name="Changes" comment="oke">
+      <change afterPath="$PROJECT_DIR$/src/Service/DepartmentService/IDepartmentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/EmployeeService/IEmployeeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Service/LoginService/ILogInService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DAO/EmployeeDAO/EmployeeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/EmployeeDAO/EmployeeDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/DepartmentService/DepartmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/DepartmentService/DepartmentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Service/EmployeeService/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/EmployeeService/EmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/LoginService/LogInService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/LoginService/LogInService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -118,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679292752209</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="oke">
+      <created>1679294622214</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1679294622214</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

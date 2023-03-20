@@ -6,7 +6,7 @@ import Modal.Department;
 import java.util.List;
 import java.util.Scanner;
 
-public class DepartmentService {
+public class DepartmentService implements IDepartmentService{
     public static  Scanner scanner = new Scanner(System.in);
     public DepartmentDAO departmentDAO;
     //TODO1: Create a method to get all departments

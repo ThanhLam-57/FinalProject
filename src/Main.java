@@ -63,7 +63,8 @@ public class Main {
                             System.out.println("3. Update an employee");
                             System.out.println("4. Delete an employee");
                             System.out.println("5. Create an employee");
-                            System.out.println("6. Exit");
+                            System.out.println("6. Search an employee");
+                            System.out.println("7. Exit");
                             System.out.println("Enter your choice: ");
                             Integer choiceEmployee = Integer.parseInt(scanner.nextLine());
                             switch (choiceEmployee) {
@@ -83,12 +84,15 @@ public class Main {
                                     employeeService.createEmployee();
                                     break;
                                 case 6:
+                                    employeeService.searchEmployee();
+                                    break;
+                                case 7:
                                     break;
                                 default:
                                     System.out.println("Invalid choice");
                                     break;
                             }
-                            if (choiceEmployee == 6) {
+                            if (choiceEmployee == 7) {
                                 break;
                             }
                         }

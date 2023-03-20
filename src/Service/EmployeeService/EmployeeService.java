@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
-public class EmployeeService {
+public class EmployeeService implements IEmployeeService {
     public static Scanner scanner = new Scanner(System.in);
     public EmployeeDAO employeeDAO;
     //TODO: Create a method to get all employees
@@ -100,5 +100,18 @@ public class EmployeeService {
         Employees employees = new Employees(employeeCode,employeeName,date,employeeGender,employeeAddress,employeePhone,employeeEmail,employeeSalary,employeeDepartmentId,employeeManagerId);
         employeeDAO.insertEmployee(employees);
         System.out.println("Create employee successfully");
+    }
+
+    public void searchEmployee(){
+        System.out.println("Enter employee code/name/phone/email: ");
+        String keyword = scanner.nextLine();
+        List<Employees> employees = employeeDAO.searchEmployee(keyword);
+        if (employees == null) {
+            System.out.println("Employee not found");
+        }else {
+            for (int i = 0; i < employees.size(); i++) {
+                System.out.println(employees.get(i).toString());
+            }
+        }
     }
 }

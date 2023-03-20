@@ -4,7 +4,7 @@ import DAO.LogInDAO.LogInDAO;
 
 import java.util.Scanner;
 
-public class LogInService {
+public class LogInService implements ILogInService{
     public static Scanner scanner = new Scanner(System.in);
     public LogInDAO logInDAO;
     public boolean checkLogin() {

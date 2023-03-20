@@ -185,4 +185,33 @@ public class EmployeeDAO {
             }
         }
     }
+
+    //Create method to search employee by name, code, phone, email
+    public static List<Employees> searchEmployee(String keyword){
+        List<Employees> employees = new ArrayList<>();
+        Connection conn = null;
+        try {
+            conn = Connect.getInstance().getConnection();
+            Statement stmt = conn.createStatement();
+            String sql = "SELECT * FROM employee WHERE employee_code LIKE '%"+keyword+"%' OR employee_name LIKE '%"+keyword+"%' OR phone LIKE '%"+keyword+"%' OR email LIKE '%"+keyword+"%';";
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                Employees employee = new Employees();
+                employee.setEmployee_code(rs.getString("employee_code"));
+                employee.setEmployee_name(rs.getString("employee_name"));
+                employee.setDate_of_birth(rs.getDate("date_of_birth"));
+                employee.setGender(rs.getString("gender"));
+                employee.setAddress(rs.getString("address"));
+                employee.setPhone(rs.getString("phone"));
+                employee.setEmail(rs.getString("email"));
+                employee.setSalary(rs.getInt("salary"));
+                employee.setDepartment_id(rs.getInt("department_id"));
+                employee.setNamager_id(rs.getInt("manager_id"));
+                employees.add(employee);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return employees;
+    }
 }
