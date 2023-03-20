@@ -1,35 +1,103 @@
 import Service.DepartmentService;
+import Service.EmployeeService;
 import Service.LogInService;
 
-import java.util.ArrayList;
-import java.util.Hashtable;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         LogInService logInService = new LogInService();
         Scanner scanner = new Scanner(System.in);
-        while (true) {
-            System.out.println("1. Log in");
-            System.out.println("2. Exit");
-            System.out.println("Enter your choice: ");
-            int choice = Integer.parseInt(scanner.nextLine());
-            switch (choice) {
-                case 1:
-                    if (logInService.checkLogin()) {
-                        System.out.println("Log in successfully");
-                    } else {
-                        System.out.println("Log in failed");
-                    }
-                    break;
-                case 2:
-                    System.exit(0);
-                    break;
-                default:
-                    System.out.println("Invalid choice");
-                    break;
+        if (logInService.checkLogin()) {
+            while (true) {
+                System.out.println("1. Department management");
+                System.out.println("2. Employee management");
+                System.out.println("3. Exit");
+                System.out.println("Enter your choice: ");
+                Integer choice = Integer.parseInt(scanner.nextLine());
+                switch (choice) {
+                    case 1:
+                        DepartmentService departmentService = new DepartmentService();
+                        while (true) {
+                            System.out.println("1. Get all departments");
+                            System.out.println("2. Get a department by id");
+                            System.out.println("3. Update a department");
+                            System.out.println("4. Delete a department");
+                            System.out.println("5. Insert a department");
+                            System.out.println("6. Exit");
+                            System.out.println("Enter your choice: ");
+                            Integer choiceDepartment = Integer.parseInt(scanner.nextLine());
+                            switch (choiceDepartment) {
+                                case 1:
+                                    departmentService.getAllDepartments();
+                                    break;
+                                case 2:
+                                    departmentService.showDepartmentById();
+                                    break;
+                                case 3:
+                                    departmentService.updateDepartment();
+                                    break;
+                                case 4:
+                                    departmentService.deleteDepartment();
+                                    break;
+                                case 5:
+                                    departmentService.createDepartment();
+                                    break;
+                                case 6:
+                                    break;
+                                default:
+                                    System.out.println("Invalid choice");
+                                    break;
+                            }
+                            if (choiceDepartment == 6) {
+                                break;
+                            }
+                        }
+                        break;
+                    case 2:
+                        EmployeeService employeeService = new EmployeeService();
+                        while (true) {
+                            System.out.println("1. Get all employees");
+                            System.out.println("2. Get an employee by id");
+                            System.out.println("3. Update an employee");
+                            System.out.println("4. Delete an employee");
+                            System.out.println("5. Exit");
+                            System.out.println("Enter your choice: ");
+                            Integer choiceEmployee = Integer.parseInt(scanner.nextLine());
+                            switch (choiceEmployee) {
+                                case 1:
+                                    employeeService.getAllEmployees();
+                                    break;
+                                case 2:
+                                    employeeService.getEmployeeByID();
+                                    break;
+                                case 3:
+                                    employeeService.updateEmployee();
+                                    break;
+                                case 4:
+                                    employeeService.deleteEmployee();
+                                    break;
+                                case 5:
+                                    break;
+                                default:
+                                    System.out.println("Invalid choice");
+                                    break;
+                            }
+                            if (choiceEmployee == 5) {
+                                break;
+                            }
+                        }
+                        break;
+                    case 3:
+                        break;
+                    default:
+                        System.out.println("Invalid choice");
+                        break;
+                }
             }
+
+        } else {
+            System.out.println("Login failed");
         }
     }
 }

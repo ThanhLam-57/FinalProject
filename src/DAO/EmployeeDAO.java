@@ -25,14 +25,9 @@ public class EmployeeDAO {
                 employee.setAddress(rs.getString("employee_address"));
                 employee.setPhone(rs.getString("employee_phone"));
                 employee.setEmail(rs.getString("employee_email"));
-                employee.setIdentity_number(rs.getString("identity_number"));
                 employee.setSalary(rs.getInt("employee_salary"));
-                employee.setPosition_name(rs.getString("employee_position"));
                 employee.setDepartment_id(rs.getString("department_id"));
-                employee.setDepartment_code(rs.getString("department_code"));
-                employee.setDepartment_name(rs.getString("department_name"));
                 employee.setNamager_id(rs.getInt("department_id"));
-                employee.setManager_name(rs.getString("manager_name"));
                 employees.add(employee);
             }
         } catch (SQLException e) {
@@ -58,14 +53,9 @@ public class EmployeeDAO {
                 employee.setAddress(rs.getString("employee_address"));
                 employee.setPhone(rs.getString("employee_phone"));
                 employee.setEmail(rs.getString("employee_email"));
-                employee.setIdentity_number(rs.getString("identity_number"));
                 employee.setSalary(rs.getInt("employee_salary"));
-                employee.setPosition_name(rs.getString("employee_position"));
                 employee.setDepartment_id(rs.getString("department_id"));
-                employee.setDepartment_code(rs.getString("department_code"));
-                employee.setDepartment_name(rs.getString("department_name"));
                 employee.setNamager_id(rs.getInt("department_id"));
-                employee.setManager_name(rs.getString("manager_name"));
             }
             return employee;
         } catch (Exception e) {
@@ -104,14 +94,9 @@ public class EmployeeDAO {
             prst.setString(5,employee.getAddress());
             prst.setString(6,employee.getPhone());
             prst.setString(7,employee.getEmail());
-            prst.setString(8,employee.getIdentity_number());
             prst.setInt(9,employee.getSalary());
-            prst.setString(10,employee.getPosition_name());
             prst.setString(11,employee.getDepartment_id());
-            prst.setString(12,employee.getDepartment_code());
-            prst.setString(13,employee.getDepartment_name());
             prst.setInt(14,employee.getNamager_id());
-            prst.setString(15,employee.getManager_name());
             prst.executeUpdate();
             return null;
         } catch (Exception ex) {

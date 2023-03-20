@@ -8,7 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DepartmentDAO {
-    public void insertDepartment(Department department){
+    //Done
+    public static void insertDepartment(Department department){
         Connection conn= null;
         PreparedStatement prst = null;
         try {
@@ -33,7 +34,9 @@ public class DepartmentDAO {
             }
         }
     }
-    public List<Department> getAllDepartment(){
+
+    //Done
+    public static List<Department> getAllDepartment(){
         List<Department> departments = new ArrayList<>();
         Connection conn= null;
         PreparedStatement prst = null;
@@ -65,13 +68,15 @@ public class DepartmentDAO {
         }
         return departments;
     }
-    public Department getDepartmentById(int department_id){
+
+    //Done
+    public static Department getDepartmentById(int department_id){
         Connection conn = null;
         Statement stmt = null;
         try {
             conn = Connect.getInstance().getConnection();
             stmt = conn.createStatement();
-            String sql = "SELECT * FROM scoremanagement s WHERE s.stdcode =" + department_id;
+            String sql = "SELECT * FROM department s WHERE s.department_id =" + department_id;
             ResultSet rs = stmt.executeQuery(sql);
             Department d = null;
             while(rs.next()) {
@@ -101,7 +106,9 @@ public class DepartmentDAO {
             }
         }
     }
-    public Department updateDepartment(Department department){
+
+    //Done
+    public static Department updateDepartment(Department department){
         Connection conn= null;
         PreparedStatement prst = null;
         try {
@@ -128,7 +135,9 @@ public class DepartmentDAO {
         }
         return department;
     }
-    public void deleteDepartment(int department_id){
+
+    //Done
+    public static void deleteDepartment(int department_id){
         Connection conn= null;
         PreparedStatement prst = null;
         try {
